@@ -1,0 +1,51 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 max-w-4xl text-center mb-12">
+  <h1 class="text-4xl font-bold mb-4">{{ .Title }}</h1>
+  {{ if .Content }}
+  <div class="text-gray-400">
+    {{ .Content }}
+  </div>
+  {{ end }}
+</div>
+
+<section class="photography-gallery">
+  <div id="gallery" class="gallery-grid">
+    {{ $static := .Site.BaseURL }}
+    {{ $photoPath := "photography" }}
+    {{ $distPath := "photography/dist" }}
+    {{ $thumbnailPath := printf "%s/thumbnails" $distPath }}
+    {{ $mediumPath := printf "%s/medium" $distPath }}
+    {{ $thumbnailDir := printf "static/%s" $thumbnailPath }}
+
+    {{ $thumbnails := readDir $thumbnailDir }}
+
+    <!-- Load photos from dist/thumbnails directory -->
+    {{ range $thumbnails }}
+      {{ if in (slice ".jpg" ".jpeg" ".JPG" ".JPEG") (path.Ext .Name) }}
+        {{ $baseName := path.BaseName .Name }}
+        {{ $thumbnailURL := printf "/%s/%s" $thumbnailPath .Name }}
+        {{ $mediumURL := printf "/%s/%s.jpg" $mediumPath $baseName }}
+
+        <!-- Determine aspect ratio from original source file for layout -->
+        {{ $sourceFile := printf "static/%s/%s.jpg" $photoPath $baseName }}
+        {{ $aspectClass := "aspect-4-3" }}
+        {{ $img := imageConfig $sourceFile }}
+        {{ $aspectRatio := div (float $img.Width) (float $img.Height) }}
+        {{ if lt $aspectRatio 0.85 }}
+          {{ $aspectClass = "aspect-portrait" }}
+        {{ else if lt $aspectRatio 1.15 }}
+          {{ $aspectClass = "aspect-square" }}
+        {{ else if gt $aspectRatio 1.6 }}
+          {{ $aspectClass = "aspect-wide" }}
+        {{ end }}
+
+        <a href="{{ $mediumURL }}" class="gallery-item {{ $aspectClass }}">
+          <figure>
+            <img src="{{ $thumbnailURL }}" alt="{{ $baseName }}" loading="lazy" />
+          </figure>
+        </a>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}

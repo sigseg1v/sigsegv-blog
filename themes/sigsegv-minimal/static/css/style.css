@@ -1,0 +1,290 @@
+/* Vendored from NightFolio - underline animation */
+.underline-animation {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.underline-animation:hover::after {
+  width: 100%;
+}
+
+/* Prose styling for markdown content */
+.prose {
+  max-width: none;
+}
+
+.prose h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #f9fafb;
+}
+
+.prose h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #f9fafb;
+}
+
+.prose h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #f9fafb;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: #d1d5db;
+}
+
+.prose a {
+  color: #60a5fa;
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  color: #93c5fd;
+}
+
+.prose ul {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  color: #d1d5db;
+  list-style-type: disc;
+}
+
+.prose ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  color: #d1d5db;
+  list-style-type: decimal;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.prose code {
+  background-color: #1f2937;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  color: #f9fafb;
+}
+
+.prose pre {
+  background-color: #1f2937;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.prose blockquote {
+  border-left: 4px solid #374151;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.prose img {
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .prose h1 {
+    font-size: 1.875rem;
+  }
+
+  .prose h2 {
+    font-size: 1.5rem;
+  }
+
+  .prose h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Photography Gallery - Full Width with Small Gaps */
+.photography-gallery {
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -2px;
+  padding: 0;
+  width: calc(100% + 4px);
+}
+
+.gallery-item {
+  display: block;
+  position: relative;
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin: 2px;
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover {
+  opacity: 0.85;
+}
+
+.gallery-item figure {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+  background-color: #1f2937;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  vertical-align: bottom;
+}
+
+/* Placeholder styling */
+.placeholder-img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+}
+
+/* Aspect ratio-based flex sizing for justified layout */
+/* All photos same height, varying widths */
+/* Portrait photos - narrower */
+.aspect-portrait,
+.aspect-3-4 {
+  flex-basis: 180px;
+  height: 240px;
+  max-width: 400px;
+}
+
+/* Landscape photos - wider */
+.aspect-4-3 {
+  flex-basis: 320px;
+  height: 240px;
+  max-width: 500px;
+}
+
+/* Square photos */
+.aspect-square,
+.aspect-1-1 {
+  flex-basis: 240px;
+  height: 240px;
+  max-width: 450px;
+}
+
+/* Wide landscape photos - widest */
+.aspect-wide,
+.aspect-16-9 {
+  flex-basis: 400px;
+  height: 240px;
+  max-width: 600px;
+}
+
+@media (min-width: 640px) {
+  .aspect-portrait,
+  .aspect-3-4 {
+    flex-basis: 200px;
+    height: 280px;
+    max-width: 450px;
+  }
+
+  .aspect-4-3 {
+    flex-basis: 370px;
+    height: 280px;
+    max-width: 550px;
+  }
+
+  .aspect-square,
+  .aspect-1-1 {
+    flex-basis: 280px;
+    height: 280px;
+    max-width: 500px;
+  }
+
+  .aspect-wide,
+  .aspect-16-9 {
+    flex-basis: 480px;
+    height: 280px;
+    max-width: 650px;
+  }
+
+  .placeholder-img {
+    min-height: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .aspect-portrait,
+  .aspect-3-4 {
+    flex-basis: 220px;
+    height: 300px;
+    max-width: 500px;
+  }
+
+  .aspect-4-3 {
+    flex-basis: 400px;
+    height: 300px;
+    max-width: 600px;
+  }
+
+  .aspect-square,
+  .aspect-1-1 {
+    flex-basis: 300px;
+    height: 300px;
+    max-width: 550px;
+  }
+
+  .aspect-wide,
+  .aspect-16-9 {
+    flex-basis: 520px;
+    height: 300px;
+    max-width: 700px;
+  }
+
+  .placeholder-img {
+    min-height: 350px;
+  }
+}

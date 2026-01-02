@@ -1,0 +1,11 @@
+public/
+resources/
+.hugo_build.lock
+node_modules/
+.DS_Store
+.claude
+themes/sigsegv-minimal/static/css/tailwind.css
+package-lock.json
+static/photography/*
+!static/photography/.placeholder
+!static/photography/dist

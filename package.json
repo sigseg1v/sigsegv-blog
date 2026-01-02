@@ -1,0 +1,23 @@
+{
+  "name": "sigsegv-blog",
+  "version": "1.0.0",
+  "description": "Minimalistic personal website built with Hugo.",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./themes/sigsegv-minimal/assets/css/tailwind.css -o ./themes/sigsegv-minimal/static/css/tailwind.css --minify",
+    "watch:css": "npx @tailwindcss/cli -i ./themes/sigsegv-minimal/assets/css/tailwind.css -o ./themes/sigsegv-minimal/static/css/tailwind.css --watch",
+    "process-photos": "node scripts/process-photos.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "CC-NC-SA 4.0",
+  "type": "commonjs",
+  "devDependencies": {
+    "tailwindcss": "^4.1.18"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "@tailwindcss/typography": "^0.5.19",
+    "sharp": "^0.33.5"
+  }
+}

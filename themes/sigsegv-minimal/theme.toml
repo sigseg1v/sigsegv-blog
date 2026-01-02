@@ -1,0 +1,10 @@
+name = "sigsegv-minimal"
+license = "MIT"
+description = "Minimal dark theme for personal portfolio and blog"
+homepage = ""
+tags = ["minimal", "dark", "portfolio", "blog", "photography"]
+features = ["blog", "portfolio", "responsive"]
+min_version = "0.112.0"
+
+[author]
+  name = "Max Verigin"

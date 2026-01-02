@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 max-w-4xl">
+  <h1 class="text-3xl font-bold mb-8">{{ .Title }}</h1>
+  {{ .Content }}
+  <div class="space-y-8 mt-8">
+    {{ range .Pages }}
+    <article class="border-b border-gray-800 pb-6">
+      <h2 class="text-2xl font-bold mb-2">
+        <a href="{{ .RelPermalink }}" class="text-blue-400 hover:text-blue-300 transition-colors underline-animation">
+          &gt; {{ .Title }}
+        </a>
+      </h2>
+      {{ if .Date }}
+      <p class="text-gray-500 text-sm mb-2">{{ .Date.Format "January 2, 2006" }}</p>
+      {{ end }}
+    </article>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
