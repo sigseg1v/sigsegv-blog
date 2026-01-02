@@ -36,7 +36,7 @@ title: "Experience"
   - **Designed, implemented, and was responsible for migration from SQL Server to PostgreSQL**
     - this included migrating 100+ databases in AWS RDS spanning multiple regions and accounts and saved the organization massive amounts on licensing fees, allowing investment in scaling to meet the needs of large enterprises
     - included migrating 16-20 TB of servers data from SQL Server to PostgreSQL with minimal downtime
-    - developed custom PostgreSQL datatype to store timestamp+offset on postgres (`DateTimeOffset` on MSSQL and C# stores 8 bytes timestamp and 2 bytes offset, white `timestamptz` on postgres is 8 bytes timestamp and baked-in offset, so a custom type is needed to store full precision and retain ability to separate the offset at runtime)
+    - developed custom PostgreSQL datatype to store timestamp+offset on postgres (`DateTimeOffset` on MSSQL and C# stores 8 bytes timestamp and 2 bytes offset, while `timestamptz` on postgres is 8 bytes timestamp and baked-in offset, so a custom type is needed to store full precision and retain ability to separate the offset at runtime)
   - **Led development of hundreds of features and improvements**
     - Streaming data transfer algorithm scaling to billions of events, Multi Factor Authentication, SAML2.0 Authentication, adoption of TypeScript and Vue.js across the org, Cake build tool, HelmDeploy AWS deployment tool, shifting CI/CD to GitHub Actions, installer rearchitecture, /v2/ API pattern saving devs hundreds of hours every release, automated testing and reporting, and many more 
 
