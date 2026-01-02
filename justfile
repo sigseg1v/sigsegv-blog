@@ -26,7 +26,7 @@ serve-prod: build-css process-photos
     hugo server --bind 0.0.0.0
 
 # Build the site for production
-build: build-css process-photos
+build: clean build-css process-photos
     hugo --minify
 
 # Clean build artifacts

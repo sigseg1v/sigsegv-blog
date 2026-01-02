@@ -1,4 +1,3 @@
-public/
 resources/
 .hugo_build.lock
 node_modules/
@@ -8,4 +7,6 @@ themes/sigsegv-minimal/static/css/tailwind.css
 package-lock.json
 static/photography/*
 !static/photography/.placeholder
-!static/photography/dist
+!static/photography/.processed-hashes.json
+public/photography/*.jpg
+!public/photography/dist/

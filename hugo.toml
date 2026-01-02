@@ -3,6 +3,11 @@ languageCode = "en-us"
 title = "Max Verigin"
 theme = "sigsegv-minimal"
 
+# Allowlist approach: only mount processed photos, never source photos
+[[module.mounts]]
+  source = "static/photography/dist"
+  target = "static/photography/dist"
+
 [params]
   description = "Software Developer & Photographer"
   darkMode = true
