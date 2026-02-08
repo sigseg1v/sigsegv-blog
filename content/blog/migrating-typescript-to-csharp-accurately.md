@@ -21,7 +21,7 @@ The general idea is you make a tmux session on the desktop, do your work, and th
 
 This has proved great for me when combined with agents like Claude Code, because you can let it run, and then check up on it quickly from your phone, give additional instructions, and let it get a lot done.
 
-![Claude Code over tmux on my phone](../../public/images/cc-clean-up-ts-server-2.png)
+![Claude Code over tmux on my phone](/images/cc-clean-up-ts-server-2.png)
 
 Armed with my fancy "Max 5x" subscription, and needing to justify the $136 CAD per month subscription, I set out to get some work done.
 
@@ -119,15 +119,15 @@ The total hours I spent I would estimate at about 7 or 8 hours. Mostly via my ph
 
 I used 90% of the weekly limit on a Clade Max 5x plan.
 
-![Claude usage at the end of the week](../../public/images/claude-weekly-2026-02-08.png)
+![Claude usage at the end of the week](/images/claude-weekly-2026-02-08.png)
 
 For the 5 hour session limits, I hit them on about 4 or 5 occasions. At times, it was a bit too eager, such as this instance where it proclaimed "Good, 40 agents now running. Let me launch more" (words of a madman?) after which it soon hit the 5 hour session limit.
 
-![Claude running 40 agents at once and hitting a limit](../../public/images/parallel-agents.png)
+![Claude running 40 agents at once and hitting a limit](/images/parallel-agents.png)
 
 The total token cost was probably around $950 CAD ($700 USD). Here's the output of `npx ccusage`; it only contains the parts that I ran inside the VM -- not any of the agents I ran on my local machine nor any of the agents I ran in Claude Web, so that's why I estimated a fair bit higher than what's reported in this picture. Since I'm using a fixed-rate plan the amount I paid was $136 CAD ($100 USD); the cost shown would have been what I was paying if I had to just pay for API tokens directly.
 
-![npx ccusage for the week](../../public/images/ccusage2.png)
+![npx ccusage for the week](/images/ccusage2.png)
 
 ## Conclusion
 

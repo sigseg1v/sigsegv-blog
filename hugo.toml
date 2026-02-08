@@ -8,6 +8,10 @@ theme = "sigsegv-minimal"
   source = "static/photography/dist"
   target = "static/photography/dist"
 
+[[module.mounts]]
+  source = "static/images"
+  target = "static/images"
+
 [params]
   description = "Software Developer & Photographer"
   darkMode = true
