@@ -1,5 +1,5 @@
 ---
-title: "Migrating TypeScript to C# Accurately"
+title: "Migrating TypeScript to C# Accurately and Quickly"
 date: 2026-02-08
 draft: false
 ---
@@ -140,3 +140,7 @@ The migration produced a working C# server that passes 274 tests and serves the 
 The upfront investment in AST comparison tooling was the highest-value work in the migration. It turned a subjective review process ("does this C# look right?") into a measurable one ("does this C# score 0.95 or higher against the TypeScript AST?"). If it got any of them wrong, it could redo them until it's correct.
 
 I've done much larger migrations than this in the past (~1.4 million lines) without AI, which took a very long time and were expensive. I would definitely use this pattern in the future if I encounter another large migration and I feel it could extend to such a scenario without much trouble.
+
+## Followup Q&A
+
+2026-02-09: Someone asked me why it's worth it to do any of this if we already have an AST. Why not just write a transpiler? The answer is that you should write a transpiler! If you can define your transformation accurately enough, it will be deterministic and be much better than this. However, what I've found myself is that the devil is in the details and while you can specify a transformation for 95% of what you want, the last little bit is where it gets difficult. This approach lets you tune how closely you want things to match, and have certain files below the threshold and manually reviewed. A transpiler is all or nothing and can't rely on the AI to try to get things right in the target language in ways that is difficult for you to specify an exact mapping for.
