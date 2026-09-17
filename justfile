@@ -50,3 +50,7 @@ rebuild: clean build
 
 # Default: serve with drafts
 default: serve
+
+# Check the built site (run after build)
+test:
+    npm test
