@@ -11,7 +11,6 @@
 <section class="photography-gallery">
   <div id="gallery" class="gallery-grid">
     {{ $static := .Site.BaseURL }}
-    {{ $photoPath := "photography" }}
     {{ $distPath := "photography/dist" }}
     {{ $thumbnailPath := printf "%s/thumbnails" $distPath }}
     {{ $mediumPath := printf "%s/medium" $distPath }}
@@ -26,8 +25,8 @@
         {{ $thumbnailURL := printf "/%s/%s" $thumbnailPath .Name }}
         {{ $mediumURL := printf "/%s/%s.jpg" $mediumPath $baseName }}
 
-        <!-- Determine aspect ratio from original source file for layout -->
-        {{ $sourceFile := printf "static/%s/%s.jpg" $photoPath $baseName }}
+        <!-- Determine aspect ratio from the thumbnail (originals are not in git, so CI can't read them) -->
+        {{ $sourceFile := printf "%s/%s" $thumbnailDir .Name }}
         {{ $aspectClass := "aspect-4-3" }}
         {{ $img := imageConfig $sourceFile }}
         {{ $aspectRatio := div (float $img.Width) (float $img.Height) }}

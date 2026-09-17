@@ -21,7 +21,16 @@ just build
 - `just build` - Build and compile static site
 - `just build-css` - Build CSS only
 - `just new-post "title"` - Create new blog post
+- `just test` - Sanity-check the built site in `public/` (run after `just build`)
 - `just clean` - Remove build artifacts
+
+## Deploying
+
+Push to `main`. GitHub Actions builds the site with Hugo, runs `npm test` against the output, and deploys to Pages.
+`public/` is not tracked. Do not commit it.
+
+Photos are the exception: originals are gitignored, so CI can't process them. After adding photos, run
+`just process-photos` and commit `static/photography/dist/`.
 
 ## Structure
 

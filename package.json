@@ -6,7 +6,8 @@
   "scripts": {
     "build:css": "npx @tailwindcss/cli -i ./themes/sigsegv-minimal/assets/css/tailwind.css -o ./themes/sigsegv-minimal/static/css/tailwind.css --minify",
     "watch:css": "npx @tailwindcss/cli -i ./themes/sigsegv-minimal/assets/css/tailwind.css -o ./themes/sigsegv-minimal/static/css/tailwind.css --watch",
-    "process-photos": "node scripts/process-photos.js"
+    "process-photos": "node scripts/process-photos.js",
+    "test": "node --test scripts/test-build.js"
   },
   "keywords": [],
   "author": "",
